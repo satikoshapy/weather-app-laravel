@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('data', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('temp_min');
-            $table->unsignedBigInteger('temp_max');
+            $table->bigInteger('temp_min');
+            $table->bigInteger('temp_max');
         });
     }
 

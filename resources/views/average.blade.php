@@ -426,8 +426,8 @@
                     <div class="header">
                         Average for Genk
                     </div>
-                        <p class="text mt-2" id="min-temp" >Min. Temperature: {{$average}} C</p>
-                        <p class="text mt-2" id="max-temp">Max. Temperature: {{$average}} C</p>
+                        <p class="text mt-2" id="min-temp" >Average of Min. Temperature: {{$min_temp_average}} C</p>
+                        <p class="text mt-2" id="max-temp">Average of Max. Temperature: {{$max_temp_average}} C</p>
                     </div>
                 </div>
                

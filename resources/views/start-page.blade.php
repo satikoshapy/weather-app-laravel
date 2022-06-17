@@ -430,13 +430,15 @@
                     </div>
                     <div class="mt-2">
                         <h1 class="title">{{$weather_data->name}}</h1>
-                        <i class="fa-solid fa-cloud fa-5x"></i>
+                        <i class="fa-solid fa-cloud-sun fa-5x"></i>
                         <p class="text mt-2">Temperature: {{($weather_data->main->temp - 32) * 0.5}} C</p>
-                        <p class="text mt-2" id="min-temp" name="temp_min" value="32">Min. Temperature: {{($weather_data->main->temp_min - 32) * 0.5}} C</p>
-                        <p class="text mt-2" id="max-temp" name="temp_max" value="12">Max. Temperature: {{($weather_data->main->temp_max - 32) * 0.5}} C</p>
+                        <p class="text mt-2" id="min-temp" >Min. Temperature: {{($weather_data->main->temp_min - 32) * 0.5}} C</p>
+                        <p class="text mt-2" id="max-temp">Max. Temperature: {{($weather_data->main->temp_max - 32) * 0.5}} C</p>
                         <p class="text">Feels like: {{($weather_data->main->feels_like -32 ) * 0.5}} C</p>
                         <p class="text">Humidity: {{$weather_data->main->humidity}}%</p>
-                        <button type="submit" class="btn btn-success">Save</button>
+                        <input type="hidden" name="temp_min" value="{{($weather_data->main->temp_min - 32) * 0.5}}">
+                        <input type="hidden" name="temp_max" value="{{($weather_data->main->temp_max - 32) * 0.5}}">
+                        <button type="submit" class="btn btn-success">SAVE</button>
                     </div>
                     <div class="footer text-muted">
                         

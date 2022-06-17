@@ -36,8 +36,12 @@ class WeatherController extends Controller
 
     public function average() {
 
-        $average = Data::all();
+        $dataset = Data::all();
+
+        $min_temp_average = Data::avg('temp_min');
+
+        $max_temp_average = Data::avg('temp_max');
        
-        return view('average', compact('average'));
+        return view('average', compact('min_temp_average', 'max_temp_average', 'dataset'));
     }
 }
