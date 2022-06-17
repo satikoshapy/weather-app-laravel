@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Models\Data;
 
 class WeatherController extends Controller
 {
@@ -17,5 +18,26 @@ class WeatherController extends Controller
 
         return view('start-page', compact('weather_data'));
        
+    }
+
+    public function average_store(Request $request) {
+
+        Data::create([
+            'temp_min' => $request->input('temp_min'),
+            'temp_max' => $request->input('temp_max')
+        ]);
+        
+
+
+
+        return redirect('average/');
+       
+    }
+
+    public function average() {
+
+        $average = Data::all();
+       
+        return view('average', compact('average'));
     }
 }

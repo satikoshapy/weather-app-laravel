@@ -420,31 +420,18 @@
     <div class="container mt-5">
         
         <div class="row mt-5">
-        <form method="post" action="{{ route('data.store')}}" id="dataForm">
-            @csrf
-            @method('POST')
+            
             <div class="col-12 justify-content-center">
                 <div class="text-center">
                     <div class="header">
-                        Weather for today
+                        Average for Genk
                     </div>
-                    <div class="mt-2">
-                        <h1 class="title">{{$weather_data->name}}</h1>
-                        <i class="fa-solid fa-cloud fa-5x"></i>
-                        <p class="text mt-2">Temperature: {{($weather_data->main->temp - 32) * 0.5}} C</p>
-                        <p class="text mt-2" id="min-temp" name="temp_min" value="32">Min. Temperature: {{($weather_data->main->temp_min - 32) * 0.5}} C</p>
-                        <p class="text mt-2" id="max-temp" name="temp_max" value="12">Max. Temperature: {{($weather_data->main->temp_max - 32) * 0.5}} C</p>
-                        <p class="text">Feels like: {{($weather_data->main->feels_like -32 ) * 0.5}} C</p>
-                        <p class="text">Humidity: {{$weather_data->main->humidity}}%</p>
-                        <button type="submit" class="btn btn-success">Save</button>
-                    </div>
-                    <div class="footer text-muted">
-                        
+                        <p class="text mt-2" id="min-temp" >Min. Temperature: {{$average}} C</p>
+                        <p class="text mt-2" id="max-temp">Max. Temperature: {{$average}} C</p>
                     </div>
                 </div>
-    </form> 
+               
             </div>
-         
         </div>
     </div>
 

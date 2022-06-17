@@ -15,3 +15,5 @@ use App\Http\Controllers\WeatherController;
 */
 
 Route::get('/', [WeatherController::class, 'index'])->name('start-page');
+Route::post('/', [WeatherController::class, 'average_store'])->name('data.store');
+Route::get('/average', [WeatherController::class, 'average'])->name('average');
